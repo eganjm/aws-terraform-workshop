@@ -47,7 +47,7 @@ resource "aws_db_instance" "wordpress" {
 
   multi_az = var.app_config.rds.multi_az
 
-  name     = var.app_config.rds.database_name
+  db_name     = var.app_config.rds.database_name
   username = var.app_config.rds.database_username
   password = "${random_string.password[count.index].result}"
 
