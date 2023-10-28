@@ -53,7 +53,8 @@ resource "aws_db_instance" "wordpress" {
 
   db_subnet_group_name = aws_db_subnet_group.wordpress[count.index].id
   parameter_group_name = aws_db_parameter_group.wordpress[count.index].id
-
+skip_final_snapshot  = true
+final_snapshot_identifier = "ci-aurora-cluster-backup"
   tags = merge(var.meta.project_tags, {
     "Name" : "${var.meta.project_slug}-${var.meta.environment}-wordpress-rds"
     "Environment" : var.meta.environment

@@ -61,9 +61,9 @@ apps = {
     }
 
     ec2 = {
-      ami_id        = "ami-00aa4671cbf840d82"
+      ami_id        = "ami-0dbc3d7bc646e8516"
       instance_size = "t3.micro"
-      key_pair      = "wordpress"
+      key_pair      = "key"
     }
 
     rds = {
